@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She Can Foundation - Contact</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #34495e;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dcdde1;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Style the label to look exactly like a submit button */
+        .submit-btn {
+            display: block;
+            text-align: center;
+            width: 100%;
+            padding: 12px;
+            background-color: #9b59b6; /* Purple theme for She Can Foundation */
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #8e44ad;
+        }
+
+        /* Hide the success message by default */
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #27ae60;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Completely hide the hacky checkbox toggle */
+        #form-toggle {
+            display: none;
+        }
+
+        /* CSS MAGIC: When the checkbox is checked, hide the form and show the success message */
+        #form-toggle:checked ~ #mainForm {
+            display: none;
+        }
+
+        #form-toggle:checked ~ .success-message {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>She Can Foundation</h2>
+
+    <input type="checkbox" id="form-toggle">
+
+    <form id="mainForm" onsubmit="return false;">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required placeholder="your.email@example.com">
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" required placeholder="How can we help you?"></textarea>
+        </div>
+        
+        <label for="form-toggle" class="submit-btn">Submit</label>
+    </form>
+    
+    <div class="success-message">
+        🎉 Form Submitted Successfully!
+    </div>
+</div>
+
+</body>
+</html>
